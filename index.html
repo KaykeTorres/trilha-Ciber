@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trilha AppSec</title>
+<meta name="description" content="Roadmap pessoal para aprender segurança web, do zero até o profissional, com os laboratórios do PortSwigger Academy organizados do mais fácil ao mais difícil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-top">
+      <div>
+        <p class="eyebrow">// roadmap pessoal de appsec</p>
+        <h1>Trilha AppSec</h1>
+        <p>Do zero ao profissional: fundamentos de redes, ferramentas e os <span id="total-labs-label"></span> laboratórios do PortSwigger Academy, em ordem do mais fácil ao mais difícil.</p>
+      </div>
+      <div class="level-pill" id="level-pill">Iniciante</div>
+    </div>
+    <div class="progress-row">
+      <div class="progress-label"><span>Progresso geral</span><span id="progress-text">0 / 0 tópicos</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="hero-actions">
+      <button class="btn" id="btn-export" type="button">Fazer backup do progresso</button>
+      <button class="btn" id="btn-import" type="button">Restaurar backup</button>
+      <button class="btn danger-outline" id="btn-reset" type="button">Zerar progresso</button>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-export">
+    <h3>// backup — exportar</h3>
+    <p>Copie o texto abaixo e cole em um arquivo .txt no seu computador para guardar. Para restaurar depois, cole esse mesmo texto na caixa de "Restaurar backup".</p>
+    <textarea class="backup" id="export-text" readonly></textarea>
+    <div class="btn-row">
+      <button class="btn primary small" id="btn-copy-export" type="button">Copiar texto</button>
+      <button class="btn small" id="btn-close-export" type="button">Fechar</button>
+    </div>
+  </div>
+
+  <div class="panel" id="panel-import">
+    <h3>// backup — restaurar</h3>
+    <p>Cole aqui o texto que você salvou antes e clique em Restaurar. Isso substitui o progresso atual deste navegador.</p>
+    <textarea class="backup" id="import-text" placeholder='{"topics": {...}}'></textarea>
+    <div class="btn-row">
+      <button class="btn primary small" id="btn-do-import" type="button">Restaurar</button>
+      <button class="btn small" id="btn-close-import" type="button">Fechar</button>
+    </div>
+  </div>
+
+  <div id="phases"></div>
+
+  <div class="skip-section">
+    <h2>// labs pulados (exigem Burp Suite Professional)</h2>
+    <p>Esses laboratórios ficam fora da trilha normal porque dependem de recursos que só existem na versão paga do Burp Suite. Pular eles não deixa nenhuma lacuna no aprendizado dos temas — eles testam a mesma vulnerabilidade, só que com uma ferramenta que você não tem.</p>
+    <div class="skip-legend">
+      <span><i class="dot oob"></i> Usa o Burp Collaborator (ataque out-of-band)</span>
+      <span><i class="dot scanner"></i> Depende do Burp Scanner automático</span>
+    </div>
+    <ul class="skip-list" id="skip-list"></ul>
+  </div>
+
+  <footer class="credit">kayke09293000 · trilha-appsec · atualizado em 2026-11-16</footer>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
